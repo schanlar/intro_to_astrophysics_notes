@@ -1,0 +1,109 @@
+% Paper Style Packages
+\documentclass[hidelinks, a4paper, 12pt]{report}
+%\def\dbar{{\mathchar'26\mkern-12mu d}} 
+\usepackage{tocbibind}
+\setlength{\tolerance}{1}                   % Prevent hyphenation / overflowing
+\setlength{\emergencystretch}{\maxdimen}    % -//-
+\setlength{\hyphenpenalty}{10000}           % -//-
+\setlength{\hbadness}{10000}                % -//-
+\usepackage{fancyhdr}           % Page numerating style
+\setlength{\headheight}{15pt}   % -//-
+\pagestyle{fancy}               % -//-
+\fancyhf{}                      % -//-
+\fancyhead[L]{\leftmark}        % -//-
+\fancyhead[R]{\thepage}         % -//-
+
+
+% Language Packages
+\usepackage[unicode]{hyperref}
+\hypersetup{colorlinks,linkcolor={blue},citecolor={blue},urlcolor={red}}
+\usepackage[LGR, T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, greek]{babel}
+\usepackage{alphabeta}
+\DeclareTextCompositeCommand{\acctonos}{PU}{\textalpha}{\9003\254}
+\DeclareTextCompositeCommand{\acctonos}{PU}{\textepsilon}{\9003\255}
+\DeclareTextCompositeCommand{\acctonos}{PU}{\texteta}{\9003\256}
+\DeclareTextCompositeCommand{\acctonos}{PU}{\textiota}{\9003\257}
+\DeclareTextCompositeCommand{\acctonos}{PU}{\textomicron}{\9003\314}
+\DeclareTextCompositeCommand{\acctonos}{PU}{\textomega}{\9003\316}
+\DeclareTextCommand{\textfinalsigma}{PU}{\9003\302}
+\usepackage{csquotes}
+\usepackage{dirtytalk}
+\usepackage{amsmath, esint}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{cancel}
+\usepackage{enumitem}
+\usepackage{subcaption}
+\newcommand{\dbar}{{d\mkern-7mu\mathchar'26\mkern-2mu}} % Define inexact differential
+
+% Bibliography Packages
+\usepackage[backend=biber, style=numeric, natbib=true, sorting=none]{biblatex}
+\usepackage{biblatex}
+\addbibresource{bibliography.bib}
+
+
+% Graphic Packages
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+
+% Paragraph Packages
+\usepackage{indentfirst}            % Indent at the start of every paragraph
+\setlength{\parindent}{0em}         % Size of indent
+\setlength{\parskip}{1em}           % Space between paragraphs
+
+
+% Document Details
+\title{Εισαγωγή στην Αστροφυσική}
+\author{Χανλαρίδης Σάββας}
+
+
+\begin{document}
+
+    \input{title/title.tex}
+    
+    \selectlanguage{english}
+    
+    % Define names of report parts
+    \renewcommand{\contentsname}{Περιεχόμενα}
+    \renewcommand{\listfigurename}{Λίστα Σχημάτων}
+    \renewcommand{\listtablename}{Λίστα Πινάκων}
+    \renewcommand{\chaptername}{Κεφάλαιο}
+    \renewcommand{\appendixname}{Παράρτημα}
+    \renewcommand{\bibname}{Βιβλιογραφία}
+    
+    \pagenumbering{roman}
+    \setlength{\parskip}{0.5em}     % Space between paragraphs
+
+    \tableofcontents
+    % \listoffigures
+    % \listoftables
+    
+    \newpage
+    
+    \pagenumbering{arabic}
+    \setlength{\parskip}{1em}       % Space between paragraphs
+
+    \include{Chapters/Chapter1}
+    \include{Chapters/Chapter2}
+    \include{Chapters/Chapter3}
+    \include{Chapters/Chapter4}
+    \include{Chapters/Chapter5}
+    \include{Chapters/Chapter6}
+    \include{Chapters/Chapter7}
+    \include{Chapters/Chapter8}
+    
+    
+    \appendix
+    \include{Appendixes/AppendixA}
+    \include{Appendixes/AppendixB}
+    \include{Appendixes/AppendixC}
+    \include{Appendixes/AppendixD}
+    
+    %\printbibliography[heading=bibintoc]
+
+\end{document}
