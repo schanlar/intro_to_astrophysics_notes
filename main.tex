@@ -12,11 +12,11 @@
 \fancyhf{}                      % -//-
 \fancyhead[L]{\leftmark}        % -//-
 \fancyhead[R]{\thepage}         % -//-
-
+\usepackage[pscoord]{eso-pic}
 
 % Language Packages
 \usepackage[unicode]{hyperref}
-\hypersetup{colorlinks,linkcolor={blue},citecolor={blue},urlcolor={red}}
+\hypersetup{colorlinks,linkcolor={black},citecolor={black},urlcolor={blue}}
 \usepackage[LGR, T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english, greek]{babel}
@@ -78,6 +78,7 @@
     
     \pagenumbering{roman}
     \setlength{\parskip}{0.5em}     % Space between paragraphs
+    
 
     \tableofcontents
     % \listoffigures
@@ -88,19 +89,19 @@
     \pagenumbering{arabic}
     \setlength{\parskip}{1em}       % Space between paragraphs
 
-    \include{Chapters/Chapter1}
+    %\include{Chapters/Chapter1}
     \include{Chapters/Chapter2}
     \include{Chapters/Chapter3}
     \include{Chapters/Chapter4}
     \include{Chapters/Chapter5}
     \include{Chapters/Chapter6}
     \include{Chapters/Chapter7}
-    \include{Chapters/Chapter8}
+    %\include{Chapters/Chapter8}
     
     
     \appendix
     \include{Appendixes/AppendixA}
-    \include{Appendixes/AppendixB}
+    %\include{Appendixes/AppendixB}
     \include{Appendixes/AppendixC}
     \include{Appendixes/AppendixD}
     
