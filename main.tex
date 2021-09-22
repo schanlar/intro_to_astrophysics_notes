@@ -1,74 +1,357 @@
 % Paper Style Packages
-\documentclass[hidelinks, a4paper, 12pt]{report}
-%\def\dbar{{\mathchar'26\mkern-12mu d}} 
-\usepackage{tocbibind}
-\setlength{\tolerance}{1}                   % Prevent hyphenation / overflowing
-\setlength{\emergencystretch}{\maxdimen}    % -//-
-\setlength{\hyphenpenalty}{10000}           % -//-
-\setlength{\hbadness}{10000}                % -//-
-\usepackage{fancyhdr}           % Page numerating style
-\setlength{\headheight}{15pt}   % -//-
-\pagestyle{fancy}               % -//-
-\fancyhf{}                      % -//-
-\fancyhead[L]{\leftmark}        % -//-
-\fancyhead[R]{\thepage}         % -//-
-\usepackage[pscoord]{eso-pic}
+% \documentclass[twoside, 10pt, a4paper]{book}
 
-% Language Packages
-\usepackage[unicode]{hyperref}
-\hypersetup{colorlinks,linkcolor={black},citecolor={black},urlcolor={blue}}
-\usepackage[LGR, T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english, greek]{babel}
-\usepackage{alphabeta}
-\DeclareTextCompositeCommand{\acctonos}{PU}{\textalpha}{\9003\254}
-\DeclareTextCompositeCommand{\acctonos}{PU}{\textepsilon}{\9003\255}
-\DeclareTextCompositeCommand{\acctonos}{PU}{\texteta}{\9003\256}
-\DeclareTextCompositeCommand{\acctonos}{PU}{\textiota}{\9003\257}
-\DeclareTextCompositeCommand{\acctonos}{PU}{\textomicron}{\9003\314}
-\DeclareTextCompositeCommand{\acctonos}{PU}{\textomega}{\9003\316}
-\DeclareTextCommand{\textfinalsigma}{PU}{\9003\302}
+% % \def\dbar{{\mathchar'26\mkern-12mu d}} 
+% % \usepackage{tocbibind}
+% % \setlength{\tolerance}{1}                   % Prevent hyphenation / overflowing
+% % \setlength{\emergencystretch}{\maxdimen}    % -//-
+% % \setlength{\hyphenpenalty}{10000}           % -//-
+% % \setlength{\hbadness}{10000}                % -//-
+% % \usepackage{fancyhdr}           % Page numerating style
+% % \setlength{\headheight}{15pt}   % -//-
+% % \pagestyle{fancy}               % -//-
+% % \fancyhf{}                      % -//-
+% % \fancyhead[L]{\leftmark}        % -//-
+% % \fancyhead[R]{\thepage}         % -//-
+% \usepackage[pscoord]{eso-pic}
+% \usepackage{minitoc}
+% \usepackage{lscape}
+% \usepackage{afterpage}
+% % Set the depth and numbering
+% % for table of contents (toc)
+% % \setcounter{tocdepth}{5}
+% % \setcounter{secnumdepth}{2}
+% \usepackage{titlesec}
+
+% %%% FORMAT THE STYLE OF CHAPTERS, SECTIONS ETC %%%
+% % Add a horizontal line in the header
+% \newpagestyle{main}{%
+%   \sethead[\thepage][][\chaptertitle]{\thesection\ \sectiontitle}{}{\thepage}
+%   \headrule
+% }
+% \pagestyle{main}
+
+% % Display format of the chapter
+% \titleformat{\chapter}[display]
+% {\large}
+% {\filleft\MakeUppercase{\chaptertitlename} \Huge\thechapter}
+% {2ex}
+% {\LARGE\bfseries\filleft}
+% [\vspace{2ex}%
+% \titlerule]
+
+% % Display format of the section
+% \titleformat{\section}[block]
+% {\filcenter\large
+% \addtolength{\titlewidth}{2pc}%
+% \titleline*[c]{\titlerule*[.6pc]{\tiny\textbullet}}%
+% \addvspace{6pt}%
+% \normalfont\bfseries\sffamily}
+% {\thesection}{1em}{}
+% \titlespacing{\section}
+% {5pc}{*2}{*2}[5pc]
+
+% % Display format of the subsection
+% \titleformat{\subsection}[block]
+% {\normalfont\sffamily}
+% {\thesubsection}{.5em}{\titlerule\\[.8ex]\bfseries}
+
+% % Display format of the subsubsection
+% \titleformat{\subsubsection}[wrap]
+% {\normalfont\fontseries{b}\selectfont\filright}
+% {\thesubsubsection.}{.5em}{}
+% \titlespacing{\subsubsection}
+% {12pc}{1.5ex plus .1ex minus .2ex}{1pc}
+
+% %%% END OF FORMATING %%%
+
+% \usepackage[              % Left and right margins
+%     DIV=14,               % You can play with these numbers for a better
+%     BCOR=1cm,             % reference look into KOMA-Script CTAN manual
+%     headinclude=true,
+%     footinclude=false,
+%     paper=A4
+%     ]{typearea}
+
+
+% % Language Packages
+% \usepackage[unicode]{hyperref}
+% \hypersetup{colorlinks,linkcolor={black},citecolor={black},urlcolor={blue}}
+% \usepackage[LGR, T1]{fontenc}
+% \usepackage[utf8]{inputenc}
+% \usepackage[english, greek]{babel}
+% \usepackage{alphabeta}
+% \DeclareTextCompositeCommand{\acctonos}{PU}{\textalpha}{\9003\254}
+% \DeclareTextCompositeCommand{\acctonos}{PU}{\textepsilon}{\9003\255}
+% \DeclareTextCompositeCommand{\acctonos}{PU}{\texteta}{\9003\256}
+% \DeclareTextCompositeCommand{\acctonos}{PU}{\textiota}{\9003\257}
+% \DeclareTextCompositeCommand{\acctonos}{PU}{\textomicron}{\9003\314}
+% \DeclareTextCompositeCommand{\acctonos}{PU}{\textomega}{\9003\316}
+% \DeclareTextCommand{\textfinalsigma}{PU}{\9003\302}
+% \usepackage{csquotes}
+% \usepackage{dirtytalk}
+% \usepackage{amsmath, esint}
+% \usepackage{amssymb}
+% \usepackage{mathtools}
+% \usepackage{xcolor}
+% \usepackage{cancel}
+% \usepackage{enumitem}
+% \usepackage{subcaption}
+% \usepackage{mathtools}
+% \newcommand{\dbar}{{d\mkern-7mu\mathchar'26\mkern-2mu}} % Define inexact differential
+
+% % Bibliography Packages
+% \usepackage[backend=biber, style=numeric, natbib=true, sorting=none]{biblatex}
+% \usepackage{biblatex}
+% \addbibresource{bibliography.bib}
+
+
+% % Graphic Packages
+% \usepackage{graphicx}
+% \usepackage{caption}
+
+
+
+% % Paragraph Packages
+% \usepackage{indentfirst}            % Indent at the start of every paragraph
+% \setlength{\parindent}{0em}         % Size of indent
+% \setlength{\parskip}{1em}           % Space between paragraphs
+
+
+% % Document Details
+% \title{Εισαγωγή στην Αστροφυσική}
+% \author{Χανλαρίδης Σάββας}
+
+
+% \begin{document}
+%     \input{title/title.tex}
+    
+%     \selectlanguage{english}
+    
+%     % Define names of report parts
+%     \renewcommand{\contentsname}{Περιεχόμενα}
+%     \renewcommand{\listfigurename}{Λίστα Σχημάτων}
+%     \renewcommand{\listtablename}{Λίστα Πινάκων}
+%     \renewcommand{\chaptername}{Κεφάλαιο}
+%     \renewcommand{\appendixname}{Παράρτημα}
+%     \renewcommand{\bibname}{Βιβλιογραφία}
+    
+%     \pagenumbering{roman}
+%     %\setlength{\parskip}{0.5em}     % Space between paragraphs
+    
+
+%     \tableofcontents
+%     % \listoffigures
+%     % \listoftables
+    
+%     \pagenumbering{arabic}
+%     %\setlength{\parskip}{1em}       % Space between paragraphs
+
+ 
+%     \include{Chapters/Chapter2}
+%     \include{Chapters/Chapter3}
+%     \include{Chapters/Chapter4}
+%     \include{Chapters/Chapter5}
+%     \include{Chapters/Chapter6}
+%     \include{Chapters/Chapter7}
+  
+    
+    
+%     \appendix
+%     \include{Appendixes/AppendixA}
+%     \include{Appendixes/AppendixB}
+%     \include{Appendixes/AppendixC}
+%     \include{Appendixes/AppendixD}
+    
+%     %\printbibliography[heading=bibintoc]
+
+% \end{document}
+
+\documentclass[a4paper, 10pt, twoside, openright]{book}
+
+
+
+%\usepackage[grid]{eso-pic} % Uncomment this to display a grid over the whole page
+\usepackage[pscoord]{eso-pic}
+\usepackage{titlesec} % Format title, chapter, sections etc
+                      % check out: https://ctan.org/pkg/titlesec?lang=en
+\usepackage{minitoc}
+\usepackage{lscape}
+\usepackage{afterpage}
+\usepackage{mathtools}
 \usepackage{csquotes}
 \usepackage{dirtytalk}
 \usepackage{amsmath, esint}
 \usepackage{amssymb}
-\usepackage{mathtools}
-\usepackage{xcolor}
 \usepackage{cancel}
-\usepackage{enumitem}
 \usepackage{subcaption}
-\newcommand{\dbar}{{d\mkern-7mu\mathchar'26\mkern-2mu}} % Define inexact differential
+\usepackage{xcolor}
+\usepackage[unicode]{hyperref}
+\hypersetup{colorlinks,linkcolor={black},citecolor={black},urlcolor={blue}}
+\usepackage[LGR, T1]{fontenc}
+\usepackage[utf8]{inputenc}
 
-% Bibliography Packages
-\usepackage[backend=biber, style=numeric, natbib=true, sorting=none]{biblatex}
-\usepackage{biblatex}
-\addbibresource{bibliography.bib}
 
 
-% Graphic Packages
+% Set the depth and numbering
+% for table of contents (toc)
+% \setcounter{tocdepth}{5}
+% \setcounter{secnumdepth}{2}
+
+
+%%% FORMAT THE STYLE OF CHAPTERS, SECTIONS ETC %%%
+% Add a horizontal line in the header
+\newpagestyle{main}{%
+  \sethead[\thepage][][\chaptertitle]{\thesection\ \sectiontitle}{}{\thepage}
+  \headrule
+}
+\pagestyle{main}
+
+% Display format of the chapter
+\titleformat{\chapter}[display]
+{\large}
+{\filleft\MakeUppercase{\chaptertitlename} \Huge\thechapter}
+{2ex}
+{\LARGE\bfseries\filleft}
+[\vspace{2ex}%
+\titlerule]
+
+% Display format of the section
+% \titleformat{\section}[block]
+% {\filcenter\large
+% \addtolength{\titlewidth}{2pc}%
+% \titleline*[c]{\titlerule*[.6pc]{\tiny\textbullet}}%
+% \addvspace{6pt}%
+% \normalfont\bfseries\sffamily}
+% {\thesection}{1em}{}
+% \titlespacing{\section}
+% {5pc}{*2}{*2}[5pc]
+
+% Display format of the subsection
+\titleformat{\subsection}[block]
+{\normalfont\sffamily}
+{\thesubsection}{.5em}{\titlerule\\[.8ex]\bfseries}
+
+% Display format of the subsubsection
+\titleformat{\subsubsection}[wrap]
+{\normalfont\fontseries{b}\selectfont\filright}
+{\thesubsubsection.}{.5em}{}
+\titlespacing{\subsubsection}
+{12pc}{1.5ex plus .1ex minus .2ex}{1pc}
+
+%%% END OF FORMATING %%%
+
+
+\usepackage[              % Left and right margins
+    DIV=14,               % You can play with these numbers for a better
+    BCOR=1cm,             % reference look into KOMA-Script CTAN manual
+    headinclude=true,
+    footinclude=false,
+    paper=A4
+    ]{typearea}
+    
+
+% commands below work only for twoside option of \documentclass
+\makeatletter
+\if@twoside
+    \newlength{\textblockoffset}
+    \setlength{\textblockoffset}{10mm}
+    \addtolength{\hoffset}{\textblockoffset}
+    \addtolength{\evensidemargin}{-2.0\textblockoffset}
+\fi
+\makeatother
+
+% PACKAGES
+\usepackage{subfiles}
+\usepackage{natbib}                    % A&A bibliography style
+\bibpunct{(}{)}{;}{a}{}{,}
+\usepackage{fancyhdr, graphicx}
+\usepackage{upgreek}                   % More greek letters
+\usepackage{enumerate}
+\usepackage{commath}
+% \usepackage[dvipsnames]{xcolor}
+%\usepackage{blindtext}
+
+% to know the page width and adjust the image size!
+\usepackage{printlen} % \uselengthunit{in}\printlength{\textwidth}
+
+% TABLE PACKAGES
+\usepackage{etoolbox}
+\BeforeBeginEnvironment{tabular}{\small}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+% IMAGES PACAKGES
 \usepackage{graphicx}
-\usepackage{caption}
+\usepackage[font=small]{caption}
+\newtheorem{theorem}{Theorem}
 \usepackage{subcaption}
 
+% TIKZ & PGFPLOTS
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage{pgfplots}
+%\pgfplotsset{compat=1.14}
+\usetikzlibrary{
+    calc,
+    patterns,
+    circuits.logic.US,
+    circuits.ee.IEC,
+    intersections,
+    angles,
+    quotes,
+    arrows,
+    shapes,
+    }
+
+
+   
+% WRITE GREEK TEXT
+\usepackage[greek,english]{babel}
+\usepackage{alphabeta}
+%\selectlanguage{greek}
+
+
+% Inline enumerated lists
+\usepackage[inline]{enumitem}
+\usepackage{pdfpages}
+%\includepdfset{offset=0.7cm -0cm}
+%\usepackage[fulladjust]{marginnote}
+
+% PDF CONFIGURATION
+% \definecolor{xlinkcolor}{cmyk}{1,1,0,0}
+% \usepackage{hyperref}
+% \hypersetup{
+% 	breaklinks,
+%     pdffitwindow=true,
+%     pdfstartview={FitH},
+%     pdftitle={PhD Thesis},                    % TITLE
+%     pdfauthor={Savvas Chanlaridis},          % AUTHOR
+%     pdfsubject={\title},                      % DOCUMENT SUBJECT
+%     pdfcreator={Savvas Chanlaridis},            % CREATOR
+%     pdfproducer={\thesisauthor},              % PRODUCER
+%     pdfkeywords={Astronomy, Astrophysics},
+%     pdfnewwindow=true,
+%     colorlinks=true,                          % COMMENT FOR BLACK LINKS
+%     linkcolor=xlinkcolor,
+%     citecolor=xlinkcolor,
+%     urlcolor=blue
+%     }
 
 % Paragraph Packages
 \usepackage{indentfirst}            % Indent at the start of every paragraph
 \setlength{\parindent}{0em}         % Size of indent
 \setlength{\parskip}{1em}           % Space between paragraphs
 
+\newcommand{\dbar}{{d\mkern-7mu\mathchar'26\mkern-2mu}} % Define inexact differential
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Document Details
+% % Document Details
 \title{Εισαγωγή στην Αστροφυσική}
 \author{Χανλαρίδης Σάββας}
 
-
 \begin{document}
-
-    \input{title/title.tex}
-    
-    \selectlanguage{english}
-    
-    % Define names of report parts
+%     % Define names of report parts
     \renewcommand{\contentsname}{Περιεχόμενα}
     \renewcommand{\listfigurename}{Λίστα Σχημάτων}
     \renewcommand{\listtablename}{Λίστα Πινάκων}
@@ -76,35 +359,76 @@
     \renewcommand{\appendixname}{Παράρτημα}
     \renewcommand{\bibname}{Βιβλιογραφία}
     
-    \pagenumbering{roman}
-    \setlength{\parskip}{0.5em}     % Space between paragraphs
+    \frontmatter  % front and main matter to make roman numbers in between.
     
 
-    \tableofcontents
-    % \listoffigures
-    % \listoftables
-    
-    \newpage
-    
-    \pagenumbering{arabic}
-    \setlength{\parskip}{1em}       % Space between paragraphs
 
-    %\include{Chapters/Chapter1}
-    \include{Chapters/Chapter2}
-    \include{Chapters/Chapter3}
-    \include{Chapters/Chapter4}
-    \include{Chapters/Chapter5}
-    \include{Chapters/Chapter6}
-    \include{Chapters/Chapter7}
-    %\include{Chapters/Chapter8}
+    % FIRST PAGE TITLE
+    \pdfbookmark[0]{Cover}{title}
     
+    \begin{titlepage}
+        \begingroup
+        \thispagestyle{empty}
+        \AddToShipoutPicture*{\put(0,0){\includegraphics[scale=1.25]{Figures/esahubble}}} % Image background
+        \centering
+        \vspace*{5cm}
+        \par\normalfont\fontsize{35}{35}\sffamily\selectfont
+        \textbf{Εισαγωγή στην Αστροφυσική}\\
+        {\LARGE Σάββας Χανλαρίδης}\par % Book title
+        \vspace*{1cm}
+        {\Huge Σημειώσεις Μαθήματος}\par % Author name
+        \endgroup
+    \end{titlepage}
+
+    \newpage  % Inserting empty page
+    \mbox{}
+    \thispagestyle{empty}
     
+
+
+    % TABLE OF CONTENT
+{   \cleardoublepage
+    \phantomsection
+    
+    %\addcontentsline{toc}{chapter}{Contents}
+    
+    % CHANGE COLOR LINK FOR TOC ONLY
+
+ \hypersetup{linkcolor=black, pdfborder=0 0 1}
+ \dominitoc
+  \tableofcontents
+%  \adjustmtc % necessary for displaying the minitoc after using \addcontentsline
+}
+
+
+	
+
+
+    \mainmatter  % front and main matter to make roman numbers in between
+
+    % BODY
+    \subfile{Chapters/Chapter2}
+    \subfile{Chapters/Chapter3}
+    \subfile{Chapters/Chapter4}
+    \subfile{Chapters/Chapter5}
+    \subfile{Chapters/Chapter6}
+    \subfile{Chapters/Chapter7}
+
+
+    % APPENDICES
     \appendix
-    \include{Appendixes/AppendixA}
-    %\include{Appendixes/AppendixB}
-    \include{Appendixes/AppendixC}
-    \include{Appendixes/AppendixD}
-    
-    %\printbibliography[heading=bibintoc]
+    \subfile{Appendixes/AppendixA}
+    \subfile{Appendixes/AppendixB}
+    \subfile{Appendixes/AppendixC}
+    \subfile{Appendixes/AppendixD}
+
+    % REFERENCES
+    % If you are using a windows machine and the bibliography doesn't work
+    % remove the extension for .bst and .bib files here!
+
+    % \bibliographystyle{bibliography/bibstyle_apj.bst}
+    % \bibliography{bibliography/bibfile_thesis}
+    % \addcontentsline{toc}{chapter}{Bibliography}
+
 
 \end{document}
