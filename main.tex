@@ -263,7 +263,7 @@
 
 % PACKAGES
 \usepackage{subfiles}
-\usepackage{natbib}                    % A&A bibliography style
+\usepackage{natbib}                    
 \bibpunct{(}{)}{;}{a}{}{,}
 \usepackage{fancyhdr, graphicx}
 \usepackage{upgreek}                   % More greek letters
@@ -344,6 +344,8 @@
 \setlength{\parskip}{1em}           % Space between paragraphs
 
 \newcommand{\dbar}{{d\mkern-7mu\mathchar'26\mkern-2mu}} % Define inexact differential
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % % Document Details
@@ -384,6 +386,25 @@
     \mbox{}
     \thispagestyle{empty}
     
+    \newpage
+    \thispagestyle{empty}
+    \begin{center}
+        \textbf{\LARGE Σημείωση}
+    \end{center}
+    \noindent Το εγχειρίδιο αυτό αποτελεί μία συλλογή από εδάφια παρμένα (άλλες φορές αυτούσια και άλλες φορές σε ελεύθερη μετάφραση) από την ελληνική και διεθνή βιβλιογραφία, διαδικτυακές πηγές καθώς και προσωπικές σημειώσεις από πανεπιστημιακές διαλέξεις.
+    
+    Το εγχείρημα επιχειρήθηκε, αρχικά, έχοντας ως στόχο τη δημιουργία ενός αρχείου που θα λειτουργούσε ως σημειώσεις για ιδιωτική χρήση και μελέτη. Δεν υπήρχε καμία πρόθεση αυτές οι σημειώσεις να δουν το φως της δημοσιότητας --- υπάρχουν πολύ καλύτερα εγχειρίδια και βιβλία που εξυπηρετούν αυτόν τον σκοπό --- και γι' αυτό το λόγο δεν δώθηκε καμία έμφαση στην παράθεση πηγών.
+    
+    Σε μια προσπάθεια εξευμενισμού, παρατίθεται στο τέλος μία λίστα με βιβλιογραφικές αναφορές που χρησιμοποιήθηκαν κατά τη διάρκεια συγγραφής αυτών των σημειώσεων.
+
+    \begin{flushright}
+        Σ. Χ.
+    \end{flushright}
+    \newpage
+    \thispagestyle{empty}
+    
+    
+    
 
 
     % TABLE OF CONTENT
@@ -394,8 +415,8 @@
     
     % CHANGE COLOR LINK FOR TOC ONLY
 
- \hypersetup{linkcolor=black, pdfborder=0 0 1}
- \dominitoc
+  \hypersetup{linkcolor=black, pdfborder=0 0 1}
+  \dominitoc
   \tableofcontents
 %  \adjustmtc % necessary for displaying the minitoc after using \addcontentsline
 }
@@ -407,12 +428,12 @@
     \mainmatter  % front and main matter to make roman numbers in between
 
     % BODY
+    \subfile{Chapters/Chapter1}
     \subfile{Chapters/Chapter2}
     \subfile{Chapters/Chapter3}
     \subfile{Chapters/Chapter4}
     \subfile{Chapters/Chapter5}
     \subfile{Chapters/Chapter6}
-    \subfile{Chapters/Chapter7}
 
 
     % APPENDICES
@@ -430,5 +451,109 @@
     % \bibliography{bibliography/bibfile_thesis}
     % \addcontentsline{toc}{chapter}{Bibliography}
 
+
+
+\newpage
+\thispagestyle{empty}
+\begin{flushright}
+    \textbf{\LARGE Βιβλιογραφία} 
+\end{flushright}
+
+\hrule
+\textbf{Διεθνής βιβλιογραφία}
+\begin{itemize}
+    
+    \item Arcones A., Thielemann F. K., Neutrino-Driven Wind Simulations and Nucleosynthesis of Heavy Elements, arXiv:1207.2527v1 [astro-ph.SR], 11 July 2012.
+    
+    \item Arnett D., Supernovae and Nucleosynthesis, Princeton University Press, New Jersey, 1996.
+    
+    \item Bethe H. and Critchfield C., The Formation of Deuteron by Proton Combination, Phys. Rev., 54:248–254, August 1938.
+    
+    \item BlattM.J., and Weisskopf F.V.,Theoretical Nuclear Physics, Springer-Verlag, NewYork, 1979.
+    
+    \item Branch, D., \& Wheeler, J. C. 2017, Supernova Explosions (Springer).
+    
+    \item Burbidge B. M., et.al., Synthesis of the Elements in Stars, Rev. Mod. Phys., 29:547-650, October 1957.
+    
+    \item Cameron A., Stellar Evolution, Nuclear Astrophysics and Nucleogenesis, Dover Publications, 2013.
+    
+    \item Cameron A., Some Nucleosynthesis Effects Associated with r-Process Jets, The Astrophysical Journal, 587:327–340, 10 April 2003.
+    
+    \item Clayton D., Principles of Stellar Evolution and Nucleosynthesis, McGraw-Hill Book Company, New York, 1968.
+    
+    \item Clayton D., and RassbachM.E., Termination of the s-Process, The Astrophysical Journal, Vol. 148, April 1967.
+    
+    \item Cox, J. P., \& Giuli, R. T. 1968, Principles of stellar structure.
+    
+    \item Cruz M.A., Nucleosynthesis in Extremely Metal-Poor and Zero Metallicity Stars, Academic Dissertation, Ludwig-Maximilian University of Munich, 2012, Munich.
+    
+    \item Eggleton, P. 2006, Evolutionary Processes in Binary and Multiple Stars (Cambridge University Press).
+    
+    \item Fewell M. P., The Atomic Nuclide with the Highest Mean Binding Energy, American Journal of Physics, 63:653-658, July 1995.
+
+    \item Freiburghaus C., Rosswog S., and Thielemann F.,r-Process in Neutron Star Mergers, ApJ, Vol. 525, pp. L121-L124.
+    
+    \item Fr\"ohlich C., et.al., Neutrino-Induced Nucleosynthesis of $A \geq 64$ Nuclei: The $\nu$p-Process, Phys. Rev. Lett., 96:142502, Apr 2006.
+    
+    \item Fujimoto S., et.al., Heavy-Element Nucleosynthesis in a Collapsar, The Astrophysical Journal, 656:382-392, 10 February 2007.
+    
+    \item Gribbin J., Stardust, Yale University Press, 11 August 2001.
+    
+    \item Jaikumar P., et.al., Nucleosynthesis in neutron-rich ejecta from quark-novae, http://arxiv.org/abs/nucl-th/0610013, 04 October 2006.
+    
+    \item K\"appeler F., The Origin of the Heavy Elements: The s-Process, Progress in Particle and Nuclear Physics, Volume 43, 1999, pp. 419–483.
+    
+    \newpage
+    \thispagestyle{empty}
+    
+    \item Kippenhahn R., Weigert A., and Weiss, A., \textit{Stellar Structure and Evolution}, 2nd. edition, Springer-Verlag Berlin Heidelberg, 2012.
+    
+    \item Korobkin O., et.al., On the Astrophysical Robustness of Neutron Star Merger r-Process, arXiv:1206.2379v2 [astro-ph.SR], 4 August 2012.
+    
+    \item Lamers, H., \& Cassinelli, J. 1999, Introduction to Stellar Winds (Cambridge University Press).
+    
+    \item Langer, N. 2012, Annual Review of Astronomy and Astrophysics, 50, 107.
+    
+    \item Lodders K., Solar System Abundances of the Elements, Springer-Verlag Berlin Heidelberg, pp. 379-417 (ISBN 978-3-642-10351-3), 2010.
+    
+    \item Nishimura S., et.al., r-Process Nucleosynthesis in Magnetohydrodynamic Jet Explosions of Core - Collapse Supernovae, The Astrophysical Journal, 642:410-419, 01 May 2006.
+    
+    \item Podsiadlowski, P. 2014, The evolution of binary systems, ed. I. Gonzlez Martnez-Pas, T. Shahbaz, \& J. Casares Velzquez, Canary Islands Winter School of Astrophysics (Cambridge University Press), 4588.
+    
+    \item Prialnik, D. 2000, An Introduction to the Theory of Stellar Structure and Evolution (Cambridge Uni- versity Press)
+    
+    \item Surman R., et.al. Heavy Element Synthesis in Neutrino-Processed Black Hole Accretion Disk Ejecta, Proceedings of Science, XIII Nuclei in the Cosmos, 7-11 July 2014, Debrecen, Hungary.
+    
+    \item Tauris, T. M., \& van den Heuvel, E. P. J. 2006, in Compact stellar X-ray sources, ed. W. H. G. Lewin \& M. van der Klis, 623.
+    
+    \item Wanajo S., et.al., The r-Process in Neutrino-Driven Winds from Nascent, ”Compact” Neutron Stars of Core-Collapse Supernovae, The Astrophysical Journal, 554 : 578È586, 10 June 2001.
+    
+    \item Woosley S., Macfadyen A., and Heger A., Collapsars, Gamma-Ray Bursts,and Supernovae, arXiv:astro-ph/9909034, 199.
+    
+    \item Witti J., et.al., Nucleosynthesis in Neutrino-Driven Winds from Protoneutron Stars, I.The α-process, Astronomy and Astrophysics 286, 841-856, 1994.
+
+\end{itemize}
+
+\textbf{Ελληνική βιβλιογραφία}
+
+\begin{itemize}
+
+    \item Βάρβογλης Χ., Σειραδάκης Γ., Εισαγωγή στη Σύγχρονη Αστρονομία, Εκδόσεις Γαρταγάνη, 1994
+
+    \item Δανέζης Μ., Θεοδοσίου Σ., Το Σύμπαν που Αγάπησα - Εισαγωγή στην Αστροφυσική, Τόμος Α, Εκδόσεις Δίαυλος, 1999.
+    
+    \item Δανέζης Μ., Θεοδοσίου Σ., Το Σύμπαν που Αγάπησα - Εισαγωγή στην Αστροφυσική, Τόμος Β, Εκδόσεις Δίαυλος, 1999.
+
+    \item Ελευθεριάδης Χ., Πυρηνική Φυσική: Βασικές Αρχές και Πυρηνοσύνθεση, Publish City, 2014.
+    
+    \item Shu F., Αστροφυσική - Δομή και Εξέλιξη του Σύμπαντος, Τόμος I: Αστέρες, Πανεπιστημιακές Εκδόσεις Κρήτης, 2009.
+    
+    \item Shu F., Αστροφυσική - Δομή και Εξέλιξη του Σύμπαντος, Τόμος II: Γαλαξίες - Ηλιακό Σύστημα, Πανεπιστημιακές Εκδόσεις Κρήτης, 2009.
+    
+    \item Σπύρου Ν., Αρχές Αστρικής Εξέλιξης, 3η έκδοση, Εκδόσεις Παρατηρητής, 2003.
+    
+    \item Χριστοπούλου - Μαυρομιχαλάκη Ε., Κοσμική ακτινοβολία, Εκδόσεις Συμμετρία, 2009.
+    
+\end{itemize}
 
 \end{document}
